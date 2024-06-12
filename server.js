@@ -3,7 +3,6 @@ const app = express();
 const cors = require('cors');
 const morgan = require('morgan');
 const sequelize = require('./config/database');
-const productoRoutes = require('./routes/productoRoutes');
 require('dotenv').config();
 
 const port = process.env.PORT || 3001;
