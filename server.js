@@ -1,4 +1,5 @@
 const express = require('express');
+const app = express();
 const cors = require('cors');
 const morgan = require('morgan');
 const sequelize = require('./config/database');
@@ -13,8 +14,8 @@ app.use(cors()); // Configurar CORS para permitir todas las solicitudes
 app.use(morgan('dev')); // Utilizar Morgan para el registro de solicitudes HTTP
 
 // Rutas
-app.use('/api', productoRoutes);
-
+const productoRoutes = require('./routes/productoRoutes');
+app.use('/api/productos', productoRoutes);
 // Sincronizar la base de datos
 sequelize.sync()
   .then(() => {
