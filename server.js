@@ -5,8 +5,7 @@ const sequelize = require('./config/database');
 const productoRoutes = require('./routes/productoRoutes');
 require('dotenv').config();
 
-const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 // Middleware
 app.use(express.json());
@@ -23,12 +22,9 @@ sequelize.sync()
   }).catch((error) => {
     console.error('Error al sincronizar la base de datos:', error);
   });
-
-// Iniciar el servidor
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
-
+  app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
+  });
 //modulo http de node
 //const http = require('http');
 //método de Node.js que crea un servidor HTTP.
