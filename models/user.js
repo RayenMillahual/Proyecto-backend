@@ -1,4 +1,6 @@
-// models/user.js
+//modelos de bases de datos aquí si su proyecto
+//involucra una base de datos. Estos modelos
+//definen cómo se estructuran los datos en su aplicación
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
