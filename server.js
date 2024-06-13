@@ -5,7 +5,7 @@ const morgan = require('morgan');
 const sequelize = require('./config/database');
 require('dotenv').config();
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
